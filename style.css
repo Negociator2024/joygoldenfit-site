@@ -201,6 +201,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   text-transform: uppercase; letter-spacing: 0.12em;
 }
 
+.section-head.inverted h2{ font-size: clamp(1.9rem, 3.4vw, 2.8rem); font-weight: 600; }
+.section-head.inverted .section-subtitle{ font-size: 1.1rem; color: var(--text-secondary); margin-top: 8px; }
+
 .section-dark{ background: var(--ink); color: var(--ivory); }
 .section-dark p{ color: var(--ivory-dim); }
 .section-dark h2{ color: var(--white); }
@@ -251,7 +254,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .price-card.featured .plan-sub{ color: var(--ivory-dim); }
 .price-card.featured li{ border-top-color: var(--line); }
-.price-card .plan-name{ font-family: var(--font-display); font-size:1.3rem; font-weight:500; font-style: italic; }
+.price-card .plan-name{ font-family: "Cormorant Garamond", Georgia, serif; font-size:1.45rem; font-weight:700; font-style: normal; }
 .price-card .plan-sub{ color: var(--ink-soft); font-size:0.85rem; margin-bottom: 20px; }
 .price-card .price{ font-family: var(--font-display); font-size: 2.6rem; font-weight:500; margin: 8px 0 24px; color: var(--gold); }
 .price-card.featured .price{ color: var(--gold-bright); }
@@ -267,22 +270,24 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .faq-item:last-child{ border-bottom: 1px solid var(--line-dark); }
 .faq-item summary{
   cursor:pointer; list-style:none; padding: 24px 0;
-  font-family: var(--font-display); font-weight:500; font-size: 1.1rem;
+  font-family: var(--font-display); font-weight:500; font-size: 1.08rem;
   display:flex; justify-content:space-between; align-items:center; gap: 20px;
 }
 .faq-item summary::-webkit-details-marker{ display:none; }
 .faq-item summary::after{ content:"+"; font-size:1.4rem; color: var(--gold); flex-shrink:0; }
 .faq-item[open] summary::after{ content:"–"; }
-.faq-item .faq-a{ padding: 0 0 26px; color: var(--ink-soft); max-width: 64ch; }
+.faq-item .faq-a{ padding: 0 0 26px; color: var(--ink-soft); max-width: 64ch; font-size: 0.95rem; }
+
+.section-subtitle{ font-family: var(--font-display); font-weight: 500; font-size: 1.15rem; font-style: normal; color: var(--text-secondary); margin: 0 0 16px; }
 .faq-category{
-  font-family: var(--font-display); font-style: italic; font-weight: 500;
-  font-size: 1.3rem; color: var(--gold); margin: 0 0 12px;
+  font-family: var(--font-display); font-style: normal; font-weight: 600;
+  font-size: 1.65rem; color: var(--gold); margin: 48px 0 16px;
 }
 
 /* Témoignages — présentation éditoriale, numérotée, sans cartes fermées */
 .testi-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: 40px 32px; }
 .testi-card{ display:flex; flex-direction:column; height:100%; }
-.testi-photo{ width: 100%; aspect-ratio: 16/10; object-fit: cover; margin-bottom: 20px; filter: grayscale(15%); }
+.testi-photo{ width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center; margin-bottom: 20px; filter: grayscale(15%); }
 .testi-card .quote{ font-size: 1.02rem; margin-bottom: 18px; font-family: var(--font-display); font-weight: 500; font-style: italic; line-height:1.4; }
 .testi-card .who{ margin-top:auto; font-size:0.82rem; color: var(--ink-soft); border-top:1px solid var(--line-dark); padding-top:14px; text-transform: uppercase; letter-spacing: 0.05em; }
 .testi-card .who strong{ color: var(--gold); display:block; font-family: var(--font-display); text-transform:none; letter-spacing:0; font-size:1rem; font-style: italic; }
@@ -310,6 +315,8 @@ form.coaching-form{ background: var(--ink); color: var(--ivory); padding: 40px; 
 .form-note{ font-size: 0.8rem; color: var(--ivory-dim); margin-top: 16px; }
 .form-status{ font-size:0.92rem; margin-top:18px; display:none; padding: 14px 16px; border-left:2px solid var(--gold-bright); background: var(--ink-soft); }
 .form-status.visible{ display:block; }
+
+.response-badge{ font-family: var(--font-body); font-size: 0.9rem; font-weight: 600; letter-spacing: 0.01em; margin-bottom: 18px; text-align: center; }
 
 @media (max-width: 860px){ .form-wrap{ grid-template-columns: 1fr; } }
 
