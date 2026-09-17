@@ -323,8 +323,10 @@ form.coaching-form{ background: var(--ink); color: var(--ivory); padding: 40px; 
 .site-footer{ background: var(--ink); color: var(--ivory-dim); padding: 60px 0 32px; font-size: 0.88rem; }
 .footer-grid{ display:grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; margin-bottom: 44px; }
 .footer-grid h4{ color: var(--ivory); font-size:0.78rem; margin-bottom:16px; font-family: var(--font-body); font-weight:600; text-transform: uppercase; letter-spacing: 0.08em; }
-.footer-grid a{ display:block; padding: 6px 0; color: var(--ivory-dim); }
+.footer-grid a{ display:flex; align-items:center; gap:9px; padding: 6px 0; color: var(--ivory-dim); }
 .footer-grid a:hover{ color: var(--gold-bright); }
+.footer-icon{ flex-shrink:0; opacity:0.85; }
+.footer-icon-link:hover .footer-icon{ opacity:1; }
 .footer-bottom{ border-top: 1px solid var(--line); padding-top: 24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:0.8rem; }
 @media (max-width: 780px){ .footer-grid{ grid-template-columns: 1fr 1fr; } }
 
