@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coaching présentiel — Contact — Joy Golden Fit Coaching</title>
+<meta name="description" content="Demande de coaching présentiel avec Joy. Remplis le formulaire pour être recontactée et recevoir une proposition personnalisée.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">Joy Golden <span>Fit</span></a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    <nav class="main-nav">
+      <a href="index.html">Accueil</a>
+      <a href="la-coach.html">La coach</a>
+      <a href="programmes.html">Programmes &amp; tarifs</a>
+      <a href="temoignages.html">Témoignages</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html" class="nav-cta" aria-current="page">Coaching présentiel</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-intro">
+    <div class="container">
+      <span class="eyebrow-line"></span>
+      <h1>Demande de coaching présentiel</h1>
+      <p>Chaque accompagnement présentiel est construit sur mesure. Remplis ce formulaire avec tes coordonnées et ton objectif : Joy te recontacte pour un échange, puis te propose une formule et un tarif adaptés à ta situation.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="form-wrap">
+
+        <div class="form-side">
+          <h2>Comment ça se passe ?</h2>
+          <div class="contact-fact">
+            <span class="k">1</span>
+            <p style="margin:0;">Tu remplis le formulaire avec tes coordonnées, ta ville et ton objectif.</p>
+          </div>
+          <div class="contact-fact">
+            <span class="k">2</span>
+            <p style="margin:0;">Joy te recontacte pour un échange téléphonique ou en visio.</p>
+          </div>
+          <div class="contact-fact">
+            <span class="k">3</span>
+            <p style="margin:0;">Tu reçois une formule et un tarif personnalisés, sans engagement.</p>
+          </div>
+
+          <p style="margin-top:32px; font-size:0.9rem; color:var(--ink-soft);">
+            Une préférence pour un accompagnement en ligne, avec tarifs déjà en place ?
+            <a href="programmes.html" style="color:var(--plum); text-decoration:underline;">Découvre la formule Signature</a>.
+          </p>
+        </div>
+
+        <form class="coaching-form" action="https://formspree.io/f/VOTRE_ID_FORMULAIRE" method="POST">
+          <div class="two-col">
+            <div class="field">
+              <label for="prenom">Prénom <span class="req">*</span></label>
+              <input type="text" id="prenom" name="prenom" required>
+            </div>
+            <div class="field">
+              <label for="nom">Nom <span class="req">*</span></label>
+              <input type="text" id="nom" name="nom" required>
+            </div>
+          </div>
+
+          <div class="two-col">
+            <div class="field">
+              <label for="email">Adresse e-mail <span class="req">*</span></label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="field">
+              <label for="telephone">Téléphone <span class="req">*</span></label>
+              <input type="tel" id="telephone" name="telephone" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="ville">Ville / secteur souhaité</label>
+            <input type="text" id="ville" name="ville" placeholder="Ex. Paris 15e, ou à domicile">
+          </div>
+
+          <div class="field">
+            <label for="objectif">Ton objectif principal</label>
+            <select id="objectif" name="objectif">
+              <option value="">Sélectionner…</option>
+              <option value="perte-de-poids">Perte de poids</option>
+              <option value="tonification">Tonification / prise de masse</option>
+              <option value="post-partum">Reprise post-partum</option>
+              <option value="preparation-evenement">Préparation à un événement (mariage, vacances…)</option>
+              <option value="bien-etre">Bien-être général / remise en forme</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="disponibilites">Disponibilités et fréquence souhaitée</label>
+            <input type="text" id="disponibilites" name="disponibilites" placeholder="Ex. 2 séances/semaine, plutôt en soirée">
+          </div>
+
+          <div class="field">
+            <label for="message">Ton message</label>
+            <textarea id="message" name="message" placeholder="Parle-moi un peu de toi, de ton parcours sportif et de ce que tu recherches."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-gold" style="width:100%;">Envoyer ma demande</button>
+          <p class="form-note">Champs marqués <span class="req">*</span> obligatoires. Tes informations sont utilisées uniquement pour te recontacter au sujet de ta demande de coaching.</p>
+          <div class="form-status" role="status"></div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Joy Golden Fit Coaching</h4>
+        <p style="color:var(--ivory-dim); font-size:0.9rem;">Coaching sportif exclusivement réservé aux femmes, en ligne et en présentiel.</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <a href="la-coach.html">La coach</a>
+        <a href="programmes.html">Programmes &amp; tarifs</a>
+        <a href="temoignages.html">Témoignages</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="contact.html">Demande présentiel</a>
+        <a href="mailto:Joy_golden_fit@outlook.fr">Joy_golden_fit@outlook.fr</a>
+        <a href="#">[ Lien Instagram ]</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Joy Golden Fit Coaching. Tous droits réservés.</span>
+      <span>Site conçu pour un accompagnement 100% féminin.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
