@@ -293,7 +293,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 /* Témoignages */
 .testi-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: 40px 32px; }
 .testi-card{ display:flex; flex-direction:column; height:100%; }
-.testi-photo{ width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center; margin-bottom: 20px; filter: grayscale(15%); }
+.testi-photo{ width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center 15%; margin-bottom: 20px; filter: grayscale(15%); }
 .testi-card .quote{ font-size: 1.02rem; margin-bottom: 18px; font-family: var(--font-display); font-weight: 500; font-style: italic; line-height:1.4; }
 .testi-card .who{ margin-top:auto; font-size:0.82rem; color: var(--ink-soft); border-top:1px solid var(--line-dark); padding-top:14px; text-transform: uppercase; letter-spacing: 0.05em; }
 .testi-card .who strong{ color: var(--gold); display:block; font-family: var(--font-display); text-transform:none; letter-spacing:0; font-size:1rem; font-style: italic; }
