@@ -20,7 +20,7 @@
   --line: rgba(245,240,232,0.14);
   --line-dark: rgba(16,14,13,0.13);
 
-  --font-display: "Fraunces", Georgia, serif;
+  --font-display: "Playfair Display", Georgia, serif;
   --font-body: "Inter", "Segoe UI", sans-serif;
 
   --maxw: 1180px;
@@ -160,7 +160,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   position:absolute; inset:0;
   background: var(--ink-soft);
   border: 1px solid var(--line);
-  clip-path: polygon(0 0, 100% 3%, 100% 100%, 0% 97%);
   overflow:hidden;
 }
 .hero-portrait img, .split .frame img{ width:100%; height:100%; object-fit:cover; display:block; }
@@ -231,7 +230,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   letter-spacing: 0.1em; color: var(--gold-bright);
   border-bottom: 1px solid var(--gold-bright); padding-bottom: 4px; margin-bottom: 22px;
 }
-.path-card h3{ font-size: 1.6rem; font-weight: 500; color: var(--white); }
+.path-card h3{ font-size: 1.4rem; font-weight: 500; color: var(--white); }
 .path-card ul{ padding-left: 0; list-style:none; margin: 20px 0 28px; color: var(--ivory-dim); font-size:0.95rem; }
 .path-card li{ padding: 10px 0; border-top: 1px solid var(--line); }
 .path-card li:first-child{ border-top:none; }
@@ -277,7 +276,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .faq-item .faq-a{ padding: 0 0 26px; color: var(--ink-soft); max-width: 64ch; }
 .faq-category{
   font-family: var(--font-display); font-style: italic; font-weight: 500;
-  font-size: 1.7rem; color: var(--gold); margin: 0 0 12px;
+  font-size: 1.3rem; color: var(--gold); margin: 0 0 12px;
 }
 
 /* Témoignages — présentation éditoriale, numérotée, sans cartes fermées */
