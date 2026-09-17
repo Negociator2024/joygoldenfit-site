@@ -36,11 +36,37 @@
     font-size:0.98rem;
     line-height:1.6;
   }
+  .presentiel-layout{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(260px,380px);
+    gap:56px;
+    align-items:center;
+  }
+  .presentiel-copy{
+    max-width:720px;
+  }
+  .presentiel-video-wrap{
+    width:100%;
+    max-width:380px;
+    justify-self:end;
+  }
+  .presentiel-video{
+    width:100%;
+    height:auto;
+    max-height:520px;
+    display:block;
+    object-fit:contain;
+    background:var(--ink-soft);
+    border:1px solid var(--line);
+  }
   @media (max-width:900px){
     .programme-pillars{grid-template-columns:repeat(2,1fr);gap:36px 28px;}
+    .presentiel-layout{grid-template-columns:1fr;gap:34px;}
+    .presentiel-video-wrap{justify-self:start;max-width:340px;}
   }
   @media (max-width:600px){
     .programme-pillars{grid-template-columns:1fr;gap:36px;}
+    .presentiel-video-wrap{max-width:300px;margin:0 auto;}
   }
 </style>
 </head>
@@ -164,12 +190,18 @@
 
   <section class="section-dark">
     <div class="container">
-      <div class="paths" style="grid-template-columns: 1fr;">
-        <div class="path-card is-dark" style="max-width:720px;">
+      <div class="presentiel-layout">
+        <div class="path-card is-dark presentiel-copy">
           <h3>Présentiel</h3>
           <p class="section-subtitle">Tu préfères un accompagnement en face à face ?</p>
           <p>Je propose le coaching présentiel uniquement sur rendez-vous. Chaque situation étant différente, je te communique la formule et son tarif après un échange personnalisé.</p>
           <a href="contact.html" class="btn btn-gold">Faire une demande de coaching présentiel</a>
+        </div>
+        <div class="presentiel-video-wrap">
+          <video class="presentiel-video" controls playsinline preload="metadata" aria-label="Aperçu vidéo du coaching présentiel">
+            <source src="images/coaching-video.mp4" type="video/mp4">
+            Ton navigateur ne prend pas en charge la lecture vidéo.
+          </video>
         </div>
       </div>
     </div>
