@@ -328,6 +328,11 @@ form.coaching-form{ background: var(--ink); color: var(--ivory); padding: 40px; 
 .footer-icon{ flex-shrink:0; opacity:0.85; }
 .footer-icon-link:hover .footer-icon{ opacity:1; }
 .footer-bottom{ border-top: 1px solid var(--line); padding-top: 24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:0.8rem; }
+.credit-link{
+  font-family: var(--font-display); font-style: italic; color: var(--ivory-dim);
+  transition: color .15s ease;
+}
+.credit-link:hover{ color: var(--gold-bright); }
 @media (max-width: 780px){ .footer-grid{ grid-template-columns: 1fr 1fr; } }
 
 /* Page intro générique (pages secondaires) */
