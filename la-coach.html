@@ -8,6 +8,22 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css?v=5">
+<style>
+  .engagement-icon{
+    width:clamp(132px,14vw,176px);
+    height:auto;
+    aspect-ratio:1/1;
+    object-fit:contain;
+    display:block;
+    margin:-16px auto 10px;
+  }
+  @media (max-width:600px){
+    .engagement-icon{
+      width:132px;
+      margin-top:-10px;
+    }
+  }
+</style>
 </head>
 <body>
 
@@ -59,17 +75,17 @@
       </div>
       <div class="pillars" style="background:transparent; border:none;">
         <div class="pillar" style="background:var(--ink-soft); border:1px solid var(--line); padding:28px;">
-          <img src="images/icone-coaching-pour-femmes.png" alt="Illustration d'un coaching pensé pour les femmes" style="width:64px; height:64px; object-fit:contain; display:block; margin:0 auto 18px;">
+          <img src="images/icone-coaching-pour-femmes.png" alt="Illustration d'un coaching pensé pour les femmes" class="engagement-icon">
           <h3 style="color:var(--white);">Un coaching pensé pour les femmes</h3>
           <p style="color:var(--ivory-dim);">Un accompagnement personnalisé, adapté à tes objectifs, ton niveau et ton rythme, dans un cadre professionnel et bienveillant.</p>
         </div>
         <div class="pillar" style="background:var(--ink-soft); border:1px solid var(--line); padding:28px;">
-          <img src="images/icone-ecoute-corps-feminin.png" alt="Illustration de l'écoute du corps féminin" style="width:64px; height:64px; object-fit:contain; display:block; margin:0 auto 18px;">
+          <img src="images/icone-ecoute-corps-feminin.png" alt="Illustration de l'écoute du corps féminin" class="engagement-icon">
           <h3 style="color:var(--white);">Une écoute du corps féminin</h3>
           <p style="color:var(--ivory-dim);">Un coaching qui prend en compte les différentes étapes de la vie et les besoins spécifiques de chaque femme.</p>
         </div>
         <div class="pillar" style="background:var(--ink-soft); border:1px solid var(--line); padding:28px;">
-          <img src="images/icone-progression-sans-injonction.png" alt="Illustration d'une progression sans injonction" style="width:64px; height:64px; object-fit:contain; display:block; margin:0 auto 18px;">
+          <img src="images/icone-progression-sans-injonction.png" alt="Illustration d'une progression sans injonction" class="engagement-icon">
           <h3 style="color:var(--white);">Une progression sans injonction</h3>
           <p style="color:var(--ivory-dim);">Pas de jugement, pas de pression : un accompagnement bienveillant et exigeant pour progresser durablement, à ton rythme.</p>
         </div>
