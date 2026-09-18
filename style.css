@@ -240,34 +240,73 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 /* Cartes tarifs */
 .pricing-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: 0; border-top: 1px solid var(--line-dark); border-left: 1px solid var(--line-dark); }
 .price-card{
-  border-right: 1px solid var(--line-dark); border-bottom: 1px solid var(--line-dark);
-  padding: 40px 34px; background: var(--ivory); display:flex; flex-direction:column;
+  border-right: 1px solid var(--line-dark);
+  border-bottom: 1px solid var(--line-dark);
+  padding: 72px 34px 40px;
+  background: var(--ivory);
+  display:flex;
+  flex-direction:column;
+  position:relative;
+  min-height: 540px;
 }
-.price-card.featured{ background: var(--ink); color: var(--ivory); border-top: 3px solid var(--gold-bright); margin-top:-3px; position:relative; z-index:1; }
+.price-card.featured{
+  background: var(--ink);
+  color: var(--ivory);
+  border-top: 3px solid var(--gold-bright);
+  margin-top:0;
+  z-index:1;
+}
 .popular-badge{
-  display:inline-block; align-self:flex-start;
-  font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em;
-  color: var(--gold-bright); border: 1px solid var(--gold-bright);
-  padding: 6px 14px; border-radius: 999px; margin-bottom: 22px;
+  position:absolute;
+  top:20px;
+  right:20px;
+  display:inline-block;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--gold-bright);
+  border: 1px solid var(--gold-bright);
+  padding: 5px 11px;
+  border-radius: 999px;
+  margin:0;
+  white-space:nowrap;
 }
 .price-card.featured .plan-sub{ color: var(--ivory-dim); }
 .price-card.featured li{ border-top-color: var(--line); }
 .price-card .plan-name{
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size:1.5rem;
+  font-size:2rem;
   font-weight:700;
-  font-style: normal;
-  line-height:1.2;
+  font-style:normal;
+  line-height:1.08;
+  margin-bottom:10px;
 }
-.price-card .plan-sub{ color: var(--ink-soft); font-size:0.95rem; font-weight:500; margin-bottom: 20px; }
-.price-card .price{ font-family: var(--font-display); font-size: 2.6rem; font-weight:500; margin: 8px 0 24px; color: var(--gold); }
+.price-card .plan-sub{
+  color: var(--ink-soft);
+  font-size:0.95rem;
+  font-weight:500;
+  line-height:1.4;
+  min-height:2.8em;
+  margin-bottom:20px;
+}
+.price-card .price{
+  font-family: var(--font-display);
+  font-size:2.6rem;
+  font-weight:500;
+  margin:8px 0 24px;
+  color:var(--gold);
+}
 .price-card.featured .price{ color: var(--gold-bright); }
 .price-card .price small{ font-family: var(--font-body); font-size:0.85rem; font-weight:500; }
 .price-card ul{ list-style:none; padding:0; margin: 0 0 28px; flex:1; }
 .price-card li{ padding: 9px 0; border-top: 1px solid var(--line-dark); font-size:1rem; font-weight:500; line-height:1.45; }
 .price-card li:first-child{ border-top:none; }
 .price-note{ margin-top: 32px; font-size: 0.85rem; color: var(--ink-soft); }
-@media (max-width: 900px){ .pricing-grid{ grid-template-columns: 1fr; } .price-card{ border-right:none; } }
+@media (max-width: 900px){
+  .pricing-grid{ grid-template-columns: 1fr; }
+  .price-card{ border-right:none; min-height:0; padding-top:68px; }
+  .price-card .plan-sub{ min-height:0; }
+}
 
 /* FAQ */
 .faq-item{ border-top: 1px solid var(--line-dark); }
