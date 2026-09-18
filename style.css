@@ -274,11 +274,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .price-card.featured .plan-sub{ color: var(--ivory-dim); }
 .price-card.featured li{ border-top-color: var(--line); }
 .price-card .plan-name{
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size:2rem;
-  font-weight:700;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  font-size:2.15rem;
+  font-weight:800;
   font-style:normal;
-  line-height:1.08;
+  line-height:1.05;
+  letter-spacing:-0.045em;
   margin-bottom:10px;
 }
 .price-card .plan-sub{
@@ -290,9 +291,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   margin-bottom:20px;
 }
 .price-card .price{
-  font-family: var(--font-display);
-  font-size:2.6rem;
-  font-weight:500;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  font-size:3rem;
+  font-weight:800;
+  line-height:1;
+  letter-spacing:-0.055em;
   margin:8px 0 24px;
   color:var(--gold);
 }
