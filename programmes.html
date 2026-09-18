@@ -10,13 +10,20 @@
 <link rel="stylesheet" href="style.css?v=5">
 <style>
   .signature-subtitle{
-    font-family:"Inter","Segoe UI",Arial,sans-serif;
-    font-size:1.45rem !important;
-    font-weight:700 !important;
+    font-family:var(--font-display);
+    font-size:clamp(1.5rem,2.1vw,1.75rem) !important;
+    font-weight:600 !important;
+    font-style:normal;
     line-height:1.2;
-    letter-spacing:-0.02em;
-    color:var(--ink) !important;
+    letter-spacing:-0.015em;
+    color:var(--ink-soft) !important;
     margin-top:10px !important;
+    margin-bottom:0 !important;
+  }
+  .signature-subtitle em{
+    color:var(--gold);
+    font-style:italic;
+    font-weight:600;
   }
   .programme-pillars{
     display:grid;
@@ -110,7 +117,7 @@
     <div class="container">
       <div class="section-head inverted">
         <h2>Coaching en ligne</h2>
-        <p class="section-subtitle signature-subtitle">La formule Signature</p>
+        <p class="section-subtitle signature-subtitle">La formule <em>Signature</em></p>
       </div>
 
       <div class="pricing-grid">
