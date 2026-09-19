@@ -14,6 +14,35 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Carrousel de transformations sur l'accueil
+  var gallery = document.querySelector('.trust-gallery');
+  var prev = document.querySelector('.trust-carousel-prev');
+  var next = document.querySelector('.trust-carousel-next');
+  if (gallery && prev && next) {
+    function getStep() {
+      var item = gallery.querySelector('.trust-gallery-item');
+      if (!item) return gallery.clientWidth;
+      var gap = parseFloat(getComputedStyle(gallery).gap) || 0;
+      return item.getBoundingClientRect().width + gap;
+    }
+    function updateCarouselButtons() {
+      var maxScroll = gallery.scrollWidth - gallery.clientWidth - 2;
+      prev.disabled = gallery.scrollLeft <= 2;
+      next.disabled = gallery.scrollLeft >= maxScroll;
+    }
+    prev.addEventListener('click', function () {
+      gallery.scrollBy({ left: -getStep(), behavior: 'smooth' });
+    });
+    next.addEventListener('click', function () {
+      gallery.scrollBy({ left: getStep(), behavior: 'smooth' });
+    });
+    gallery.addEventListener('scroll', function () {
+      window.requestAnimationFrame(updateCarouselButtons);
+    });
+    window.addEventListener('resize', updateCarouselButtons);
+    updateCarouselButtons();
+  }
+
   // Formulaire de contact (coaching présentiel)
   var form = document.querySelector('.coaching-form');
   if (form) {
