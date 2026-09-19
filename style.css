@@ -371,6 +371,34 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   margin: 48px 0 16px;
 }
 
+/* Galerie accueil — résultats / transformations */
+.trust-gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.trust-gallery-item{
+  margin:0;
+  overflow:hidden;
+  background:var(--ink-soft);
+  aspect-ratio:4/5;
+}
+.trust-gallery-item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 15%;
+  display:block;
+  transition:transform .35s ease;
+}
+.trust-gallery-item:hover img{ transform:scale(1.018); }
+@media (max-width:780px){
+  .trust-gallery{ grid-template-columns:repeat(2,1fr); gap:12px; }
+}
+@media (max-width:520px){
+  .trust-gallery{ grid-template-columns:1fr; }
+}
+
 /* Témoignages */
 .testi-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: 40px 32px; }
 .testi-card{ display:flex; flex-direction:column; height:100%; }
