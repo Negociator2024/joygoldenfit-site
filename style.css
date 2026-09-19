@@ -400,6 +400,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   display:block;
   transition:transform .35s ease;
 }
+.trust-gallery-item img.trust-gallery-contain{
+  object-fit:contain;
+  object-position:center center;
+  background:var(--ink-soft);
+}
 .trust-gallery-item:hover img{ transform:scale(1.018); }
 .trust-carousel-controls{
   display:flex;
