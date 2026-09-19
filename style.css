@@ -371,17 +371,26 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   margin: 48px 0 16px;
 }
 
-/* Galerie accueil — résultats / transformations */
+/* Galerie accueil — carrousel transformations */
+.trust-carousel{ position:relative; }
 .trust-gallery{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
+  display:flex;
   gap:18px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  scrollbar-width:none;
+  overscroll-behavior-x:contain;
+  padding-bottom:2px;
 }
+.trust-gallery::-webkit-scrollbar{ display:none; }
 .trust-gallery-item{
+  flex:0 0 calc((100% - 36px)/3);
   margin:0;
   overflow:hidden;
   background:var(--ink-soft);
   aspect-ratio:4/5;
+  scroll-snap-align:start;
 }
 .trust-gallery-item img{
   width:100%;
@@ -392,11 +401,48 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   transition:transform .35s ease;
 }
 .trust-gallery-item:hover img{ transform:scale(1.018); }
+.trust-carousel-controls{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:12px;
+  margin-top:18px;
+}
+.trust-carousel-hint{
+  margin-right:auto;
+  color:var(--ink-soft);
+  font-size:0.8rem;
+  font-weight:500;
+}
+.trust-carousel-btn{
+  width:42px;
+  height:42px;
+  border:1px solid var(--line-dark);
+  background:transparent;
+  color:var(--ink);
+  font-size:1.15rem;
+  cursor:pointer;
+  display:grid;
+  place-items:center;
+  transition:border-color .15s ease,color .15s ease,background .15s ease;
+}
+.trust-carousel-btn:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+}
+.trust-carousel-btn:disabled{
+  opacity:.35;
+  cursor:default;
+}
 @media (max-width:780px){
-  .trust-gallery{ grid-template-columns:repeat(2,1fr); gap:12px; }
+  .trust-gallery{ gap:12px; margin-right:-28px; padding-right:28px; }
+  .trust-gallery-item{ flex-basis:72%; }
 }
 @media (max-width:520px){
-  .trust-gallery{ grid-template-columns:1fr; }
+  .trust-gallery{ margin-right:-20px; padding-right:20px; }
+  .trust-gallery-item{ flex-basis:86%; }
+  .trust-carousel-controls{ margin-top:14px; }
+  .trust-carousel-hint{ font-size:0.76rem; }
 }
 
 /* Témoignages */
