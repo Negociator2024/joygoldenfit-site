@@ -1,0 +1,63 @@
+{
+  "title": "Choisis ta formule personnalisée.",
+  "intro": "Choisis la formule de coaching en ligne adaptée à tes objectifs, avec un suivi personnalisé et un accompagnement à distance.",
+  "online_title": "Coaching en ligne",
+  "signature_label": "La formule",
+  "signature_emphasis": "Signature",
+  "formulas": [
+    {
+      "subtitle": "Pour commencer",
+      "features": [
+        "Application dédiée + vidéos d'exécution",
+        "Programme d'entraînement personnalisé",
+        "Conseils alimentaires sur-mesure",
+        "Réponses par mail et WhatsApp illimité"
+      ]
+    },
+    {
+      "subtitle": "Pour des objectifs à moyen terme",
+      "features": [
+        "Tout ce qui est inclus dans la formule 4 semaines",
+        "Bilan et ajustements hebdomadaires",
+        "Analyse de repas par photo",
+        "Soutien psychologique inclus"
+      ]
+    },
+    {
+      "subtitle": "Le plus conseillé pour des résultats long terme",
+      "features": [
+        "Tout ce qui est inclus dans la formule 8 semaines",
+        "Suivi complet sur toute la durée",
+        "Accompagnement rapproché jusqu'à l'objectif"
+      ]
+    }
+  ],
+  "included_title": "Inclus dans chaque formule",
+  "included_intro": "Ce que tu trouveras dans le programme.",
+  "pillars": [
+    {
+      "title": "Application dédiée",
+      "text": "Des démonstrations vidéos claires pour chaque exercice, pour t'entraîner en toute confiance et sécurité."
+    },
+    {
+      "title": "Plan personnalisé",
+      "text": "Un programme sur-mesure, conçu en fonction de tes objectifs, ton niveau et tes besoins spécifiques."
+    },
+    {
+      "title": "Conseils nutritionnels",
+      "text": "Des recommandations alimentaires adaptées et une analyse des repas pour optimiser tes résultats."
+    },
+    {
+      "title": "Bilan hebdomadaire",
+      "text": "Un suivi régulier pour évaluer tes progrès, ajuster tes objectifs et répondre à tes questions."
+    },
+    {
+      "title": "Coaching réactif",
+      "text": "Échanges illimités par mail et WhatsApp, du lundi au vendredi de 9h à 19h."
+    },
+    {
+      "title": "Soutien psychologique",
+      "text": "Un accompagnement mental pour renforcer ta confiance et adopter une approche positive."
+    }
+  ]
+}
