@@ -1,6 +1,22 @@
 // Joy Golden Fit Coaching — comportements partagés
 
 document.addEventListener('DOMContentLoaded', function () {
+  // Pied de page partagé : fichier technique hors du contenu éditable du CMS
+  var footerMount = document.querySelector('[data-site-footer]');
+  if (footerMount) {
+    fetch('templates/footer.html')
+      .then(function (res) {
+        if (!res.ok) throw new Error('Footer introuvable');
+        return res.text();
+      })
+      .then(function (html) {
+        footerMount.outerHTML = html;
+      })
+      .catch(function (err) {
+        console.error('Impossible de charger le pied de page partagé.', err);
+      });
+  }
+
   // Menu mobile
   var toggle = document.querySelector('.nav-toggle');
   var nav = document.querySelector('.main-nav');
