@@ -1,6 +1,6 @@
 media:
-  input: images
-  output: images
+  input: images/content
+  output: images/content
   categories: [image]
   extensions: [jpg, jpeg, png, webp]
   rename: safe
@@ -10,6 +10,193 @@ content:
     label: Contenu du site
     type: group
     items:
+      - name: home
+        label: Accueil
+        type: file
+        path: content/accueil.json
+        format: json
+        operations:
+          delete: false
+        fields:
+          - name: hero_title
+            label: Titre principal
+            type: object
+            fields:
+              - name: before
+                label: Début du titre
+                type: string
+                required: true
+              - name: emphasis
+                label: Partie mise en valeur
+                type: string
+                required: true
+              - name: after
+                label: Fin du titre
+                type: string
+                required: true
+          - name: intro
+            label: Introduction
+            type: text
+            required: true
+          - name: hero_image
+            label: Photo principale de Joy
+            type: image
+            required: true
+          - name: transformations
+            label: Photos de transformation
+            type: image
+            required: true
+            options:
+              multiple:
+                max: 20
+              unique: true
+
+      - name: coach
+        label: La coach
+        type: file
+        path: content/la-coach.json
+        format: json
+        operations:
+          delete: false
+        fields:
+          - name: title
+            label: Titre de la page
+            type: string
+            required: true
+          - name: intro
+            label: Introduction
+            type: text
+            required: true
+          - name: photo
+            label: Photo de Joy
+            type: image
+            required: true
+          - name: approach_title
+            label: Titre de la section approche
+            type: string
+            required: true
+          - name: approach_paragraph_1
+            label: Approche — paragraphe 1
+            type: text
+            required: true
+          - name: approach_paragraph_2
+            label: Approche — paragraphe 2
+            type: text
+            required: true
+          - name: quote
+            label: Citation
+            type: text
+            required: true
+          - name: closing
+            label: Texte de conclusion
+            type: text
+            required: true
+          - name: engagement_title
+            label: Titre de la section engagement
+            type: string
+            required: true
+          - name: engagement_intro
+            label: Introduction de la section engagement
+            type: string
+            required: true
+          - name: engagements
+            label: Engagements
+            type: object
+            list:
+              min: 3
+              max: 3
+              collapsible:
+                collapsed: true
+                summary: "{title}"
+            fields:
+              - name: title
+                label: Titre
+                type: string
+                required: true
+              - name: text
+                label: Texte
+                type: text
+                required: true
+          - name: cta_title
+            label: Phrase finale
+            type: string
+            required: true
+
+      - name: programmes
+        label: Programmes
+        type: file
+        path: content/programmes.json
+        format: json
+        operations:
+          delete: false
+        fields:
+          - name: title
+            label: Titre de la page
+            type: string
+            required: true
+          - name: intro
+            label: Introduction
+            type: text
+            required: true
+          - name: online_title
+            label: Titre de la section coaching en ligne
+            type: string
+            required: true
+          - name: signature_label
+            label: Texte avant Signature
+            type: string
+            required: true
+          - name: signature_emphasis
+            label: Mot mis en valeur
+            type: string
+            required: true
+          - name: formulas
+            label: Textes des formules
+            type: object
+            list:
+              min: 3
+              max: 3
+              collapsible:
+                collapsed: true
+                summary: "{subtitle}"
+            fields:
+              - name: subtitle
+                label: Sous-titre
+                type: string
+                required: true
+              - name: features
+                label: Descriptions
+                type: string
+                list:
+                  min: 1
+                required: true
+          - name: included_title
+            label: Titre de la section incluse
+            type: string
+            required: true
+          - name: included_intro
+            label: Introduction de la section incluse
+            type: string
+            required: true
+          - name: pillars
+            label: Contenu inclus dans les formules
+            type: object
+            list:
+              min: 6
+              max: 6
+              collapsible:
+                collapsed: true
+                summary: "{title}"
+            fields:
+              - name: title
+                label: Titre
+                type: string
+                required: true
+              - name: text
+                label: Description
+                type: text
+                required: true
+
       - name: testimonials
         label: Témoignages
         type: file
