@@ -1,0 +1,20 @@
+{
+  "hero_title": {
+    "before": "Deviens la",
+    "emphasis": "meilleure version",
+    "after": "de toi-même."
+  },
+  "intro": "Un accompagnement 100 % sur-mesure, exclusivement réservé aux femmes. En ligne ou en présentiel à ton rythme. Un programme adapté à tes objectifs : prise de masse, perte de poids ou tonification.",
+  "hero_image": "images/content/Joy.jpeg",
+  "transformations": [
+    "images/content/ferial.jpeg",
+    "images/content/mumu.jpeg",
+    "images/content/lamia.jpg",
+    "images/content/transformation-04.webp",
+    "images/content/transformation-05.webp",
+    "images/content/transformation-07.webp",
+    "images/content/transformation-08.webp",
+    "images/content/transformation-09.webp",
+    "images/content/transformation-06.webp"
+  ]
+}
