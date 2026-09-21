@@ -1,0 +1,121 @@
+media:
+  input: images
+  output: images
+  categories: [image]
+  extensions: [jpg, jpeg, png, webp]
+  rename: safe
+
+content:
+  - name: editable_content
+    label: Contenu du site
+    type: group
+    items:
+      - name: testimonials
+        label: Témoignages
+        type: file
+        path: content/temoignages.json
+        format: json
+        operations:
+          delete: false
+        fields:
+          - name: title
+            label: Titre de la page
+            type: string
+            required: true
+          - name: intro
+            label: Introduction
+            type: text
+            required: true
+          - name: items
+            label: Témoignages
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{name}"
+            fields:
+              - name: name
+                label: Prénom
+                type: string
+                required: true
+              - name: quote
+                label: Témoignage
+                type: text
+                required: true
+              - name: type
+                label: Type de coaching
+                type: string
+                required: true
+              - name: image
+                label: Photo
+                type: image
+                required: true
+
+      - name: faq
+        label: FAQ
+        type: file
+        path: content/faq.json
+        format: json
+        operations:
+          delete: false
+        fields:
+          - name: title
+            label: Titre de la page
+            type: string
+            required: true
+          - name: intro
+            label: Introduction
+            type: text
+            required: true
+          - name: categories
+            label: Catégories
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{title}"
+            fields:
+              - name: title
+                label: Nom de la catégorie
+                type: string
+                required: true
+              - name: items
+                label: Questions
+                type: object
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: "{question}"
+                fields:
+                  - name: question
+                    label: Question
+                    type: string
+                    required: true
+                  - name: answer
+                    label: Réponse
+                    type: text
+                    required: true
+                  - name: open
+                    label: Ouverte par défaut
+                    type: boolean
+
+      - name: contact
+        label: Contact
+        type: file
+        path: content/contact.json
+        format: json
+        operations:
+          delete: false
+        fields:
+          - name: title
+            label: Titre de la page
+            type: string
+            required: true
+          - name: intro
+            label: Introduction
+            type: text
+            required: true
+          - name: response_badge
+            label: Message au-dessus du formulaire
+            type: string
+            required: true
