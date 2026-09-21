@@ -25,6 +25,18 @@
     font-style:italic;
     font-weight:600;
   }
+  .payment-banner{
+    margin:0 0 30px;
+    padding:11px 16px;
+    border-top:1px solid var(--line-dark);
+    border-bottom:1px solid var(--line-dark);
+    color:rgba(16,14,13,.72);
+    font-size:.86rem;
+    font-weight:500;
+    letter-spacing:.01em;
+    text-align:center;
+    background:rgba(16,14,13,.018);
+  }
   .programme-pillars{
     display:grid;
     grid-template-columns:repeat(3,1fr);
@@ -76,6 +88,7 @@
     border:1px solid var(--line);
   }
   @media (max-width:900px){
+    .payment-banner{text-align:left;}
     .programme-pillars{grid-template-columns:repeat(2,1fr);gap:36px 28px;}
     .presentiel-layout{grid-template-columns:1fr;gap:34px;}
     .presentiel-video-wrap{justify-self:start;max-width:340px;}
@@ -119,6 +132,8 @@
         <h2>Coaching en ligne</h2>
         <p class="section-subtitle signature-subtitle">La formule <em>Signature</em></p>
       </div>
+
+      <div class="payment-banner">Paiement en 4x sans frais disponible</div>
 
       <div class="pricing-grid">
         <div class="price-card">
