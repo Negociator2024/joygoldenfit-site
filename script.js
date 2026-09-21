@@ -26,6 +26,140 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Accueil — textes, photo principale et galerie
+  var homeTitleBefore = document.querySelector('[data-cms-home-title-before]');
+  if (homeTitleBefore) {
+    loadCmsJson('content/accueil.json').then(function (data) {
+      var titleEmphasis = document.querySelector('[data-cms-home-title-emphasis]');
+      var titleAfter = document.querySelector('[data-cms-home-title-after]');
+      var intro = document.querySelector('[data-cms-home-intro]');
+      var photo = document.querySelector('[data-cms-home-photo]');
+      var homeGallery = document.querySelector('[data-cms-home-transformations]');
+
+      if (data.hero_title) {
+        if (data.hero_title.before) homeTitleBefore.textContent = data.hero_title.before + ' ';
+        if (titleEmphasis && data.hero_title.emphasis) titleEmphasis.textContent = data.hero_title.emphasis;
+        if (titleAfter && data.hero_title.after) titleAfter.textContent = ' ' + data.hero_title.after;
+      }
+      if (intro && data.intro) intro.textContent = data.intro;
+      if (photo && data.hero_image) photo.src = data.hero_image;
+
+      if (homeGallery && Array.isArray(data.transformations)) {
+        homeGallery.innerHTML = '';
+        data.transformations.forEach(function (imagePath) {
+          var figure = document.createElement('figure');
+          figure.className = 'trust-gallery-item';
+
+          var img = document.createElement('img');
+          img.src = imagePath || '';
+          img.alt = 'Transformation accompagnée par Joy Golden Fit';
+          if (/transformation-/i.test(imagePath || '')) {
+            img.className = 'trust-gallery-contain';
+          }
+
+          figure.appendChild(img);
+          homeGallery.appendChild(figure);
+        });
+      }
+    }).catch(function (err) {
+      console.error('Impossible de charger le contenu CMS de l’accueil.', err);
+    });
+  }
+
+  // La coach — textes, citation et photo principale
+  var coachTitle = document.querySelector('[data-cms-coach-title]');
+  if (coachTitle) {
+    loadCmsJson('content/la-coach.json').then(function (data) {
+      var setText = function (selector, value) {
+        var el = document.querySelector(selector);
+        if (el && value) el.textContent = value;
+      };
+
+      if (data.title) coachTitle.textContent = data.title;
+      setText('[data-cms-coach-intro]', data.intro);
+
+      var photo = document.querySelector('[data-cms-coach-photo]');
+      if (photo && data.photo) photo.src = data.photo;
+
+      setText('[data-cms-coach-approach-title]', data.approach_title);
+      setText('[data-cms-coach-p1]', data.approach_paragraph_1);
+      setText('[data-cms-coach-p2]', data.approach_paragraph_2);
+      if (data.quote) setText('[data-cms-coach-quote]', '« ' + data.quote + ' »');
+      setText('[data-cms-coach-closing]', data.closing);
+      setText('[data-cms-coach-engagement-title]', data.engagement_title);
+      setText('[data-cms-coach-engagement-intro]', data.engagement_intro);
+      setText('[data-cms-coach-cta-title]', data.cta_title);
+
+      if (Array.isArray(data.engagements)) {
+        var engagementCards = document.querySelectorAll('.section-dark .pillars .pillar');
+        data.engagements.forEach(function (item, index) {
+          var card = engagementCards[index];
+          if (!card) return;
+          var heading = card.querySelector('h3');
+          var paragraph = card.querySelector('p');
+          if (heading && item.title) heading.textContent = item.title;
+          if (paragraph && item.text) paragraph.textContent = item.text;
+        });
+      }
+    }).catch(function (err) {
+      console.error('Impossible de charger le contenu CMS de la page La coach.', err);
+    });
+  }
+
+  // Programmes — textes uniquement ; prix, durées, liens Stripe et paiement restent protégés
+  var programmesTitle = document.querySelector('[data-cms-programmes-title]');
+  if (programmesTitle) {
+    loadCmsJson('content/programmes.json').then(function (data) {
+      var setText = function (selector, value) {
+        var el = document.querySelector(selector);
+        if (el && value) el.textContent = value;
+      };
+
+      if (data.title) programmesTitle.textContent = data.title;
+      setText('[data-cms-programmes-intro]', data.intro);
+      setText('[data-cms-programmes-online-title]', data.online_title);
+      setText('[data-cms-programmes-signature-label]', data.signature_label);
+      setText('[data-cms-programmes-signature-emphasis]', data.signature_emphasis);
+      setText('[data-cms-programmes-included-title]', data.included_title);
+      setText('[data-cms-programmes-included-intro]', data.included_intro);
+
+      if (Array.isArray(data.formulas)) {
+        var cards = document.querySelectorAll('.pricing-grid .price-card');
+        data.formulas.forEach(function (formula, index) {
+          var card = cards[index];
+          if (!card) return;
+          var subtitle = card.querySelector('.plan-sub');
+          if (subtitle && formula.subtitle) subtitle.textContent = formula.subtitle;
+          if (Array.isArray(formula.features)) {
+            var list = card.querySelector('ul');
+            if (list) {
+              list.innerHTML = '';
+              formula.features.forEach(function (feature) {
+                var li = document.createElement('li');
+                li.textContent = feature;
+                list.appendChild(li);
+              });
+            }
+          }
+        });
+      }
+
+      if (Array.isArray(data.pillars)) {
+        var pillars = document.querySelectorAll('.programme-pillars .pillar');
+        data.pillars.forEach(function (item, index) {
+          var pillar = pillars[index];
+          if (!pillar) return;
+          var heading = pillar.querySelector('h3');
+          var paragraph = pillar.querySelector('p');
+          if (heading && item.title) heading.textContent = item.title;
+          if (paragraph && item.text) paragraph.textContent = item.text;
+        });
+      }
+    }).catch(function (err) {
+      console.error('Impossible de charger le contenu CMS de la page Programmes.', err);
+    });
+  }
+
   var testimonialsGrid = document.querySelector('[data-cms-testimonials]');
   if (testimonialsGrid) {
     loadCmsJson('content/temoignages.json').then(function (data) {
