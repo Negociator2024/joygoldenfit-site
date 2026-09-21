@@ -1,0 +1,27 @@
+{
+  "title": "Hello, moi c'est Joy, coach sportive diplômée d'État.",
+  "intro": "Passionnée de sport et de développement personnel, je mets aujourd'hui mon expertise et mon savoir-faire à ton service pour t'aider à passer au niveau supérieur.",
+  "photo": "images/content/la-coach.jpeg",
+  "approach_title": "Mon approche",
+  "approach_paragraph_1": "Depuis plusieurs années, j'accompagne les femmes à se sentir plus fortes, plus confiantes et bien dans leur corps. Mon objectif ? T'aider à explorer tes limites et révéler la meilleure version de toi-même.",
+  "approach_paragraph_2": "Pas de programme standardisé ici : mon coaching est 100% sur-mesure, adapté à ton rythme, tes objectifs et ton quotidien. Tu veux retrouver la forme après une grossesse ? Te sentir incroyable pour ton mariage ? Sculpter un corps dans lequel tu te sens fière ? Ou tout simplement prendre soin de ta santé ?",
+  "quote": "Je suis là pour t'accompagner avec bienveillance, détermination, et si besoin... un petit coup de pied aux fesses pour te faire avancer !",
+  "closing": "Pas de jugement. Pas de pression. Juste toi, moi, et une bonne dose de motivation. Prête à te lancer ?",
+  "engagement_title": "Mon engagement",
+  "engagement_intro": "Pourquoi un coaching exclusivement féminin ?",
+  "engagements": [
+    {
+      "title": "Un coaching pensé pour les femmes",
+      "text": "Un accompagnement personnalisé, adapté à tes objectifs, ton niveau et ton rythme, dans un cadre professionnel et bienveillant."
+    },
+    {
+      "title": "Une écoute du corps féminin",
+      "text": "Un coaching qui prend en compte les différentes étapes de la vie et les besoins spécifiques de chaque femme."
+    },
+    {
+      "title": "Une progression sans injonction",
+      "text": "Pas de jugement, pas de pression : un accompagnement bienveillant et exigeant pour progresser durablement, à ton rythme."
+    }
+  ],
+  "cta_title": "Envie d'échanger avant de te lancer ?"
+}
