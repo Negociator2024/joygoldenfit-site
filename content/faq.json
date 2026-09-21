@@ -1,0 +1,66 @@
+{
+  "title": "Questions fréquentes",
+  "intro": "Tout ce qu'il faut savoir avant de démarrer, en ligne ou en présentiel.",
+  "categories": [
+    {
+      "title": "Le coaching en ligne",
+      "items": [
+        {
+          "question": "Une fois la commande passée, en combien de temps vais-je recevoir mon programme ?",
+          "answer": "Après ta commande, tu recevras un questionnaire à remplir pour que je puisse concevoir un programme 100% personnalisé et adapté à tes objectifs. Une fois le questionnaire complété et retourné, tu recevras ton programme sous 48 heures ouvrées.",
+          "open": true
+        },
+        {
+          "question": "Est-ce que ce programme est adapté aux débutantes ?",
+          "answer": "Oui, il est totalement adapté aux débutantes ! Peu importe ton niveau, les exercices et l'accompagnement sont conçus pour te permettre de progresser à ton rythme, avec toutes les explications nécessaires pour bien exécuter les mouvements en toute confiance.",
+          "open": false
+        },
+        {
+          "question": "Comment se passe le suivi en ligne ?",
+          "answer": "Le suivi se fait principalement par mail. Chaque semaine, nous faisons un bilan complet : progrès, photos d'évolution, mensurations, ressentis et éventuelles difficultés. En dehors du bilan hebdomadaire, tu peux me poser toutes tes questions en illimité via WhatsApp, du lundi au vendredi de 9h à 19h. Je réponds sous quelques heures, voire instantanément selon mes disponibilités.",
+          "open": false
+        },
+        {
+          "question": "J'ai peur que ce soit trop restrictif. Est-ce que j'aurai droit à un cheat meal ?",
+          "answer": "Oui, un cheat meal occasionnel est possible, mais il doit rester maîtrisé. L'objectif est de te faire plaisir sans compromettre tes progrès. Un écart de temps en temps ne ruinera pas tes efforts, mais la régularité et la discipline restent essentielles pour atteindre tes objectifs.",
+          "open": false
+        },
+        {
+          "question": "En combien de temps vais-je voir des résultats ?",
+          "answer": "Les premiers résultats apparaissent généralement au bout de quelques semaines, mais cela dépend de ton engagement, de ta régularité et de ton métabolisme. En suivant le programme sérieusement, tu verras des changements visibles et durables tout en gagnant en confiance et en bien-être.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "title": "Le coaching présentiel",
+      "items": [
+        {
+          "question": "Comment se passe une demande de coaching présentiel ?",
+          "answer": "Tu remplis le formulaire de contact avec tes coordonnées et ton objectif. Je te recontacte pour un échange, puis je te propose une formule et un tarif adaptés à ta situation.",
+          "open": false
+        },
+        {
+          "question": "Où se déroulent les séances ?",
+          "answer": "[ Précisez la zone géographique et le ou les lieux : studio, domicile, extérieur. ]",
+          "open": false
+        },
+        {
+          "question": "Pourquoi les tarifs présentiel ne sont-ils pas affichés en ligne ?",
+          "answer": "Chaque accompagnement présentiel est construit sur mesure selon la fréquence, la durée et le lieu des séances : je te communique donc le tarif après un échange, afin de te proposer une formule réellement adaptée.",
+          "open": false
+        }
+      ]
+    },
+    {
+      "title": "Le cadre 100% féminin",
+      "items": [
+        {
+          "question": "Le coaching est-il vraiment réservé aux femmes ?",
+          "answer": "Oui, l'ensemble des accompagnements — en ligne comme en présentiel — est exclusivement dédié aux femmes.",
+          "open": false
+        }
+      ]
+    }
+  ]
+}
