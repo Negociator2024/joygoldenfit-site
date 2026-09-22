@@ -1,0 +1,67 @@
+name: Optimize programme images
+
+on:
+  push:
+    paths:
+      - '.github/workflows/optimize-programme-images.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install Pillow
+        run: pip install pillow
+
+      - name: Convert programme images to WebP
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image, ImageOps
+
+          names = [
+              "programme-application-dediee",
+              "programme-plan-entrainement-personnalise",
+              "programme-conseils-nutritionnels",
+              "programme-bilan-hebdomadaire",
+              "programme-coaching-reactif-whatsapp-feminin",
+              "programme-soutien-psychologique",
+          ]
+
+          for name in names:
+              src = Path("images") / f"{name}.png"
+              dst = Path("images") / f"{name}.webp"
+              with Image.open(src) as im:
+                  im = ImageOps.exif_transpose(im).convert("RGB")
+                  im.thumbnail((1200, 1200), Image.Resampling.LANCZOS)
+                  im.save(dst, "WEBP", quality=82, method=6, optimize=True)
+              src.unlink()
+
+          page = Path("programmes.html")
+          html = page.read_text(encoding="utf-8")
+          for name in names:
+              html = html.replace(f"images/{name}.png", f"images/{name}.webp")
+          page.write_text(html, encoding="utf-8")
+          PY
+
+      - name: Show optimized sizes
+        run: ls -lh images/programme-*.webp
+
+      - name: Commit optimized assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add programmes.html images/programme-*.webp
+          git add -u images/
+          git commit -m "Optimize programme images for faster loading"
+          git push
