@@ -333,7 +333,7 @@ document.addEventListener('DOMContentLoaded', function () {
         ? 'Message enregistré (mode démonstration — connectez un vrai formulaire pour recevoir les demandes).'
         : 'Merci ! Votre demande a bien été envoyée, Joy vous répond sous 48h.';
     } else {
-      el.textContent = "Une erreur est survenue. Vous pouvez aussi écrire directement à Joy_golden_fit@outlook.fr";
+      el.textContent = "Une erreur est survenue. Vous pouvez aussi écrire directement à joygoldenfit@gmail.com";
     }
   }
 });
