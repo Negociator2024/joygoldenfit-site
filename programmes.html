@@ -259,13 +259,18 @@
     const start = card.querySelector('.start-check');
     const button = card.querySelector('.checkout-btn');
     if (!cgv || !start || !button) return;
+    const name = card.querySelector('.consent-name');
+    const email = card.querySelector('.consent-email');
     function updateCheckout(){
-      button.setAttribute('aria-disabled', String(!(cgv.checked && start.checked)));
+      const identityOk = name.value.trim().length > 1 && email.validity.valid && email.value.trim() !== '';
+      button.setAttribute('aria-disabled', String(!(cgv.checked && start.checked && identityOk)));
     }
     cgv.addEventListener('change', updateCheckout);
     start.addEventListener('change', updateCheckout);
+    name.addEventListener('input', updateCheckout);
+    email.addEventListener('input', updateCheckout);
     button.addEventListener('click', function(event){
-      if (!(cgv.checked && start.checked)) event.preventDefault();
+      if (!(cgv.checked && start.checked && name.value.trim().length > 1 && email.validity.valid && email.value.trim() !== '')) event.preventDefault();
     });
     updateCheckout();
   });
