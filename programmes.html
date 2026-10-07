@@ -62,6 +62,18 @@
     font-size:0.98rem;
     line-height:1.6;
   }
+  .checkout-consent{
+    margin-top:18px;
+    display:grid;
+    gap:10px;
+    font-size:.78rem;
+    line-height:1.4;
+    text-align:left;
+  }
+  .checkout-consent label{display:flex;gap:8px;align-items:flex-start;cursor:pointer;}
+  .checkout-consent input{margin-top:3px;flex:0 0 auto;}
+  .checkout-consent a{text-decoration:underline;}
+  .price-card .btn[aria-disabled="true"]{opacity:.45;pointer-events:none;cursor:not-allowed;}
   .presentiel-layout{
     display:grid;
     grid-template-columns:minmax(0,1fr) minmax(260px,380px);
@@ -144,7 +156,11 @@
             <li>Conseils alimentaires sur-mesure</li>
             <li>Réponses par mail et WhatsApp illimité</li>
           </ul>
-          <a href="https://buy.stripe.com/9AQbLSeOx9CBdCE5kp" class="btn btn-outline-dark" target="_blank" rel="noopener">Let's go</a>
+          <div class="checkout-consent">
+            <label><input type="checkbox" class="cgv-check"> <span>J’ai lu et j’accepte les <a href="cgv.html" target="_blank" rel="noopener">Conditions Générales de Vente</a>.</span></label>
+            <label><input type="checkbox" class="start-check"> <span>Je demande expressément que mon accompagnement commence avant l’expiration du délai légal de rétractation de 14 jours et reconnais qu’en cas de rétractation après le début de l’exécution, je serai tenue de régler le montant correspondant aux prestations effectivement réalisées jusqu’à la communication de ma décision de me rétracter.</span></label>
+          </div>
+          <a href="https://buy.stripe.com/9AQbLSeOx9CBdCE5kp" class="btn btn-outline-dark checkout-btn" target="_blank" rel="noopener" aria-disabled="true">Let's go</a>
         </div>
 
         <div class="price-card">
@@ -157,7 +173,11 @@
             <li>Analyse de repas par photo</li>
             <li>Soutien psychologique inclus</li>
           </ul>
-          <a href="https://buy.stripe.com/4gw03agWFdSR6acaEK" class="btn btn-outline-dark" target="_blank" rel="noopener">Let's go</a>
+          <div class="checkout-consent">
+            <label><input type="checkbox" class="cgv-check"> <span>J’ai lu et j’accepte les <a href="cgv.html" target="_blank" rel="noopener">Conditions Générales de Vente</a>.</span></label>
+            <label><input type="checkbox" class="start-check"> <span>Je demande expressément que mon accompagnement commence avant l’expiration du délai légal de rétractation de 14 jours et reconnais qu’en cas de rétractation après le début de l’exécution, je serai tenue de régler le montant correspondant aux prestations effectivement réalisées jusqu’à la communication de ma décision de me rétracter.</span></label>
+          </div>
+          <a href="https://buy.stripe.com/4gw03agWFdSR6acaEK" class="btn btn-outline-dark checkout-btn" target="_blank" rel="noopener" aria-disabled="true">Let's go</a>
         </div>
 
         <div class="price-card featured">
@@ -170,7 +190,11 @@
             <li>Suivi complet sur toute la durée</li>
             <li>Accompagnement rapproché jusqu'à l'objectif</li>
           </ul>
-          <a href="https://buy.stripe.com/14k17eeOxcONcyAdQX" class="btn btn-gold" target="_blank" rel="noopener">Let's go</a>
+          <div class="checkout-consent">
+            <label><input type="checkbox" class="cgv-check"> <span>J’ai lu et j’accepte les <a href="cgv.html" target="_blank" rel="noopener">Conditions Générales de Vente</a>.</span></label>
+            <label><input type="checkbox" class="start-check"> <span>Je demande expressément que mon accompagnement commence avant l’expiration du délai légal de rétractation de 14 jours et reconnais qu’en cas de rétractation après le début de l’exécution, je serai tenue de régler le montant correspondant aux prestations effectivement réalisées jusqu’à la communication de ma décision de me rétracter.</span></label>
+          </div>
+          <a href="https://buy.stripe.com/14k17eeOxcONcyAdQX" class="btn btn-gold checkout-btn" target="_blank" rel="noopener" aria-disabled="true">Let's go</a>
         </div>
       </div>
     </div>
@@ -222,6 +246,23 @@
 
 <div data-site-footer></div>
 
+<script>
+  document.querySelectorAll('.price-card').forEach(function(card){
+    const cgv = card.querySelector('.cgv-check');
+    const start = card.querySelector('.start-check');
+    const button = card.querySelector('.checkout-btn');
+    if (!cgv || !start || !button) return;
+    function updateCheckout(){
+      button.setAttribute('aria-disabled', String(!(cgv.checked && start.checked)));
+    }
+    cgv.addEventListener('change', updateCheckout);
+    start.addEventListener('change', updateCheckout);
+    button.addEventListener('click', function(event){
+      if (!(cgv.checked && start.checked)) event.preventDefault();
+    });
+    updateCheckout();
+  });
+</script>
 <script src="script.js"></script>
 </body>
 </html>
