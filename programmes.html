@@ -62,17 +62,12 @@
     font-size:0.98rem;
     line-height:1.6;
   }
-  .checkout-consent{
-    margin-top:18px;
-    display:grid;
-    gap:10px;
-    font-size:.78rem;
-    line-height:1.4;
-    text-align:left;
-  }
+  .checkout-consent{margin-top:18px;display:grid;gap:10px;font-size:.78rem;line-height:1.4;text-align:left;}
   .checkout-consent label{display:flex;gap:8px;align-items:flex-start;cursor:pointer;}
   .checkout-consent input{margin-top:3px;flex:0 0 auto;}
   .checkout-consent a{text-decoration:underline;}
+  .checkout-identity{display:grid;gap:8px;margin-top:16px;text-align:left;}
+  .checkout-identity input{width:100%;padding:10px;border:1px solid var(--line);font:inherit;background:#fff;}
   .price-card .btn[aria-disabled="true"]{opacity:.45;pointer-events:none;cursor:not-allowed;}
   .presentiel-layout{
     display:grid;
@@ -156,6 +151,10 @@
             <li>Conseils alimentaires sur-mesure</li>
             <li>Réponses par mail et WhatsApp illimité</li>
           </ul>
+          <div class="checkout-identity">
+            <input type="text" class="consent-name" placeholder="Nom et prénom" autocomplete="name" required>
+            <input type="email" class="consent-email" placeholder="E-mail" autocomplete="email" required>
+          </div>
           <div class="checkout-consent">
             <label><input type="checkbox" class="cgv-check"> <span>J’ai lu et j’accepte les <a href="cgv.html" target="_blank" rel="noopener">Conditions Générales de Vente</a>.</span></label>
             <label><input type="checkbox" class="start-check"> <span>Je demande expressément que mon accompagnement commence avant l’expiration du délai légal de rétractation de 14 jours et reconnais qu’en cas de rétractation après le début de l’exécution, je serai tenue de régler le montant correspondant aux prestations effectivement réalisées jusqu’à la communication de ma décision de me rétracter.</span></label>
@@ -173,6 +172,10 @@
             <li>Analyse de repas par photo</li>
             <li>Soutien psychologique inclus</li>
           </ul>
+          <div class="checkout-identity">
+            <input type="text" class="consent-name" placeholder="Nom et prénom" autocomplete="name" required>
+            <input type="email" class="consent-email" placeholder="E-mail" autocomplete="email" required>
+          </div>
           <div class="checkout-consent">
             <label><input type="checkbox" class="cgv-check"> <span>J’ai lu et j’accepte les <a href="cgv.html" target="_blank" rel="noopener">Conditions Générales de Vente</a>.</span></label>
             <label><input type="checkbox" class="start-check"> <span>Je demande expressément que mon accompagnement commence avant l’expiration du délai légal de rétractation de 14 jours et reconnais qu’en cas de rétractation après le début de l’exécution, je serai tenue de régler le montant correspondant aux prestations effectivement réalisées jusqu’à la communication de ma décision de me rétracter.</span></label>
@@ -190,6 +193,10 @@
             <li>Suivi complet sur toute la durée</li>
             <li>Accompagnement rapproché jusqu'à l'objectif</li>
           </ul>
+          <div class="checkout-identity">
+            <input type="text" class="consent-name" placeholder="Nom et prénom" autocomplete="name" required>
+            <input type="email" class="consent-email" placeholder="E-mail" autocomplete="email" required>
+          </div>
           <div class="checkout-consent">
             <label><input type="checkbox" class="cgv-check"> <span>J’ai lu et j’accepte les <a href="cgv.html" target="_blank" rel="noopener">Conditions Générales de Vente</a>.</span></label>
             <label><input type="checkbox" class="start-check"> <span>Je demande expressément que mon accompagnement commence avant l’expiration du délai légal de rétractation de 14 jours et reconnais qu’en cas de rétractation après le début de l’exécution, je serai tenue de régler le montant correspondant aux prestations effectivement réalisées jusqu’à la communication de ma décision de me rétracter.</span></label>
