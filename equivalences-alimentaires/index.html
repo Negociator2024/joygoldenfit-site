@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calculateur d'équivalences · Joy Golden Fit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--r:#E1192C;--k:#0E0E0E;--g:#6b6b6b;--l:#f4f1f1}
+*{box-sizing:border-box}body{margin:0;font-family:Montserrat,system-ui,sans-serif;color:var(--k);background:#fff}
+header{background:var(--k);color:#fff;padding:28px 20px 34px;border-bottom:4px solid var(--r)}
+.wrap{max-width:760px;margin:0 auto}
+.tag{font-size:11px;letter-spacing:4px;color:var(--r);font-weight:700}
+h1{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(34px,8vw,54px);line-height:1.12;margin:10px 0 8px;letter-spacing:.5px}
+header p{color:#cfcfcf;font-size:14px;line-height:1.5;margin:0}
+main{padding:24px 20px 40px}
+.card{border:1px solid #eee;border-radius:14px;padding:18px;margin-bottom:16px;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+.step{font-family:Anton,Impact,sans-serif;color:var(--r);font-size:15px;letter-spacing:1px;margin-bottom:10px}
+label{display:block;font-size:12px;font-weight:700;letter-spacing:1px;color:var(--g);margin:10px 0 6px;text-transform:uppercase}
+select,input{width:100%;font:inherit;font-size:16px;padding:12px;border:1.5px solid #ddd;border-radius:10px;background:#fff;color:var(--k)}
+select:focus,input:focus{outline:none;border-color:var(--r)}
+.crit{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.crit button{font:inherit;font-weight:700;font-size:13px;padding:12px 6px;border-radius:10px;border:1.5px solid var(--k);background:#fff;cursor:pointer}
+.crit button[aria-pressed=true]{background:var(--r);border-color:var(--r);color:#fff}
+.res{background:var(--k);color:#fff;border-radius:14px;padding:20px}
+.big{font-family:Anton,Impact,sans-serif;font-size:clamp(30px,8vw,44px);line-height:1.15}
+.big span{color:var(--r)}
+table{width:100%;border-collapse:collapse;margin-top:14px;font-size:14px}
+th,td{padding:9px 4px;white-space:nowrap;font-size:13px;text-align:right;border-bottom:1px solid #2a2a2a}th:first-child,td:first-child{text-align:left}
+th{color:#aaa;font-size:11px;letter-spacing:1px;font-weight:600}
+.pos{color:#ff7a86}.neg{color:#8fd19e}
+.reset{margin-top:14px;font:inherit;font-weight:700;background:none;color:#fff;border:1.5px solid #fff;border-radius:10px;padding:11px 16px;cursor:pointer;width:100%}
+.note{font-size:12px;color:var(--g);line-height:1.55}
+footer{text-align:center;font-size:12px;color:var(--g);padding:0 20px 30px}footer a{color:var(--r);font-weight:700;text-decoration:none}
+@media(max-width:420px){th,td{font-size:11px;padding:8px 2px}.res{padding:12px}.crit button{font-size:11px}}
+</style></head><body>
+<header><div class="wrap"><a href="../index.html" style="display:inline-block;color:white;text-decoration:none;font-size:13px;margin-bottom:16px">← Retour à Joy Golden Fit</a><div class="tag">♛ JOY GOLDEN FIT</div><h1>CALCULATEUR<br>D'ÉQUIVALENCES</h1><p>Remplace un aliment par un autre en gardant la même quantité de protéines, de glucides ou de calories. Compagnon de l'ebook « Manger Simple ».</p></div></header>
+<main class="wrap">
+<div class="card"><div class="step">1 · MON ALIMENT DE DÉPART</div>
+<label for="a">Aliment</label><select id="a"></select>
+<label for="q">Quantité (g, poids cru sauf mention)</label><input id="q" type="number" inputmode="decimal" min="1" max="2000" step="any" value="130"></div>
+<div class="card"><div class="step">2 · JE LE REMPLACE PAR</div>
+<label for="b">Aliment de remplacement</label><select id="b"></select>
+<label>Critère d'équivalence</label><div class="crit" role="group"><button type="button" data-c="1" aria-pressed="true">Protéines</button><button type="button" data-c="2" aria-pressed="false">Glucides</button><button type="button" data-c="0" aria-pressed="false">Calories</button></div></div>
+<div class="res" aria-live="polite"><div class="step" style="color:#fff">3 · RÉSULTAT</div><div class="big" id="out"></div><div id="warn" class="note" style="color:#ccc;margin-top:6px"></div>
+<table><thead><tr><th></th><th>KCAL</th><th>PROT.</th><th>GLUC.</th><th>LIP.</th></tr></thead><tbody id="tb"></tbody></table>
+<button class="reset" id="r">Réinitialiser</button></div>
+<p class="note" style="margin-top:16px">Valeurs moyennes indicatives pour 100 g. Vérifie les étiquettes des produits : les données varient selon les marques et la préparation. Résultats arrondis. Deux aliments équivalents sur un critère ne sont pas identiques sur les autres : consulte les écarts du tableau.</p>
+</main>
+<footer><a href="https://www.instagram.com/coach_joy_golden_fit/">@coach_joy_golden_fit</a> · <a href="https://www.joygoldenfit.fr">www.joygoldenfit.fr</a></footer>
+<script src="foods.js"></script><script src="app.js"></script>
+</body></html>
